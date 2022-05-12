@@ -1,0 +1,17 @@
+- installBundle:
+  - 'mvn:org.jahia.modules/popperjs'
+  - 'mvn:org.jahia.modules/bootstrap4-core'
+  - 'mvn:org.jahia.modules/bootstrap4-components'
+  - 'https://store.jahia.com/cms/mavenproxy/private-app-store/org/jahia/se/modules/codemirror-editor/1.1.3/codemirror-editor-1.1.3.jar'
+  - 'mvn:org.jahia.se.modules/jahia-industrial'
+  - 'https://store.jahia.com/cms/mavenproxy/private-app-store/org/jahia/se/modules/industrial-media-component/1.0.0/industrial-media-component-1.0.0.jar'
+  - 'mvn:org.jahia.se.modules/headless-templatesSet'
+  autoStart: true
+  uninstallPreviousVersion: true
+- importSite: jar:file:///tmp/headless-industrial.zip!/headless-industrial.zip
+- import: jar:file:///tmp/headless-industrial.zip!/users.zip
+- editConfiguration: "org.jahia.bundles.api.authorization"
+  configIdentifier: "headless"
+  properties:
+    headless.auto_apply[1].origin: "http://vercel.my.local:3000"
+

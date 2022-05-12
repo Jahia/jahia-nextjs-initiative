@@ -1,0 +1,21 @@
+- addMavenRepository: 'https://devtools.jahia.com/nexus/content/groups/enterprise@id=jahia-enterprise@snapshots'
+  username: ${env:NEXUS_USERNAME}
+  password: ${env:NEXUS_PASSWORD}
+- addMavenRepository: 'https://devtools.jahia.com/nexus/content/groups/marketing-factory-group@id=marketing-factory-group@snapshots'
+  username: ${env:NEXUS_USERNAME}
+  password: ${env:NEXUS_PASSWORD}
+- installBundle:
+  - 'mvn:org.jahia.modules/jexperience'
+  - 'mvn:org.jahia.modules/jexperience-data-generator'
+  autoStart: true
+  uninstallPreviousVersion: true
+# Configure jExperience
+- editConfiguration: "org.jahia.modules.jexperience.settings"
+  configIdentifier: "global"
+  properties: 
+    jexperience.jCustomerURL: "https://jcustomer:9443"
+    jexperience.jCustomerUsername: "karaf"
+    jexperience.jCustomerPassword: "jcustomerP@55"
+    jexperience.jCustomerTrustAllCertificates: "true"
+    jexperience.jCustomerUsePublicAddressesForAdmin: "false"
+    jexperience.jCustomerKey: "670c26d1cc413346c3b2fd9ce65dab41"
