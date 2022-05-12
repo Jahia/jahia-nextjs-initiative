@@ -1,4 +1,4 @@
-#The Jahia Nextjs initiative : *Jahia the best DXP to manage headless web project*
+# The Jahia Nextjs initiative : *Jahia the best DXP to manage headless web project*
 
 The aim of the Jahia Nextjs initiative is to explore and explain
 the Jahia capabilities to easily create and manage headless web project.
@@ -6,13 +6,13 @@ Solutions we use are :
 - [Jahia][jahia-website] : a Cloud / On-premise *DXP* solution to create and contribute
 - [Vercel][vercel-website] a next-js Cloud platform provider to render the web project
 
-###Table of Contents :
+### Table of Contents :
 
 - [Initiative overview](#initiative-overview)
 - [Why we decide this initiative](#why-we-decide-this-initiative)
 - [Modules involved](#modules-involved)
 
-##Initiative overview
+## Initiative overview
 
 To be the best, Jahia must take care of both side of a project, the development and the content contribution.
 One of the key factor success of a web project is the facility for each side to execute their task. 
@@ -22,7 +22,7 @@ One of the key factor success of a web project is the facility for each side to 
 |A web project is easy to create and maintain when they have an SDK in their preferred languages, and they can create, update, test and deploy component quickly.| A web project is easy to contribute and maintain when they understand the web site page structure and when they can create a content by clicking a button or just copy past a WYSIWYG content in the web page.|
 | ![000] | ![001] |
 
-##Why we decide this initiative
+## Why we decide this initiative
 
 The aim of this Initiative is to help partner and developer to think `Jahia` for a full headless web project. In other word, as a developer which modules do I have to 
 install and configure to set up a platform where my Web Contributors can create, contribute and personalize a website in Jahia and
@@ -40,7 +40,7 @@ which is a very popular carousel but not a pure React component.
 capabilities of Jahia to deliver the website. Thus, what we want to achieve is to offer 
 the same capabilities to contribute, personalize and deliver a website regardless of the live renderer.
 
-##Modules involved
+## Modules involved
 Three modules are required to contribute a web project in Jahia and to render it in Vercel.
 Two modules are deployed in Jahia and one module is deployed in Vercel.
 
@@ -54,7 +54,7 @@ Two modules are deployed in Jahia and one module is deployed in Vercel.
 
 We also provide an archive which contains a pre-built website with page samples.
 
-##Set up the project
+## Set up the project
 [Read this dedicated page][setup.md]
 
 
