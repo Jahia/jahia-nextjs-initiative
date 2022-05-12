@@ -12,5 +12,5 @@
     - "mvn:org.jahia.se.modules/headless-templatesSet"
   autoStart: true
   uninstallPreviousVersion: true
-- importSite: jar:https://github.com/Jahia/headless-templatesSet/raw/main/docker-jahia/headless-industrial.zip!/headless-industrial.zip
-- import: jar:https://github.com/Jahia/headless-templatesSet/raw/main/docker-jahia/headless-industrial.zip!/users.zip
+- importSite: jar:https://github.com/Jahia/jahia-nextjs-initiative/raw/main/docker-jahia/headless-industrial.zip!/headless-industrial.zip
+- import: jar:https://github.com/Jahia/jahia-nextjs-initiative/raw/main/docker-jahia/headless-industrial.zip!/users.zip
