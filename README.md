@@ -1,4 +1,4 @@
-# The Jahia Nextjs initiative : *Jahia the best DXP to manage headless web project*
+# The Jahia Nextjs initiative : *Jahia the DXP to manage headless web project*
 
 The aim of the Jahia Nextjs initiative is to explore and explain
 the Jahia capabilities to easily create and manage headless web project.
