@@ -164,7 +164,7 @@ To work properly, the application needs to have some environment variables confi
 1. From your vercel dashboard click the **next-industrial** card, then click **Settings**
 then **Environment Variables**
    <img src="/doc/images/setup/106_project_post_config.png" width="800px"/>
---
+
    <img src="/doc/images/setup/107_post_config.png" width="800px"/>
 
 2. From the Environment Variable screen you have to register four variables,
@@ -199,20 +199,20 @@ Now your environment variables are configured you can redo a build.
 Go to the **Deployments** tabs and click the **three dots menu** in the right and
 click **Redeploy**
 
-![110]
+<img src="/doc/images/setup/110_vercel.png" width="800px"/>
 
 Now the build must be successful and pages should have been created. If you look at
 the build log from **Deployment Status** > **Building**  you should see Page at the
 end of the log trace:
 
-![111]
+<img src="/doc/images/setup/111_vercel.png" width="800px"/>
 
 >Note: there are some warnings in the log about React components and scss; it is normal.
 
 And in the **Deployments** tabs you should see
 
-![112]
-![113]
+<img src="/doc/images/setup/112_vercel.png" width="800px"/>
+<img src="/doc/images/setup/113_vercel.png" width="800px"/>
 
 To check your deployment you can try to load the home page :
 
@@ -220,9 +220,9 @@ To check your deployment you can try to load the home page :
 
 In this tutorial the url looks like this: 
 *https://nextjs-industrial-mu.vercel.app/sites/headless-industrial/home*
-![114]
+<img src="/doc/images/setup/114_vercel.png" width="800px"/>
 >Note : Vercel configures three domains. In the context of this tutorial and in accordance to the configuration I will use nextjs-industrial-hduchesn.vercel.app
-![115]
+<img src="/doc/images/setup/115_vercel.png" width="800px"/>
 
 ### Jahia Post-configuration
 #### Configure access to vercel site in Jahia
@@ -231,10 +231,10 @@ the same way we set environment variables in vercel.
 
 1. From Jahia backend go to **Page Composer** and right click on the site node :
 **Headless Industrial** and click **Edit**
-![205]
+   <img src="/doc/images/setup/205_jahia.png" width="800px"/>
 2. The edit form appears, scroll down to the end of the form and turn on the
 switch button **HEADLESS SITE**
-![206]
+   <img src="/doc/images/setup/206_jahia.png" width="800px"/>
 3. You have to fill four parameters :
    1. The headless frontend server url, this is the stable domain of your vercel app.
    In our case : *https://nextjs-industrial-hduchesn.vercel.app*
@@ -243,17 +243,17 @@ switch button **HEADLESS SITE**
    env variable), use:`57e22073-2485-43fe-b9a1-9205d5310561`
    4. The path to list the Page template available in the nextjs app, use:
    `/api/jahia/templates`
-   ![207]
-4. Click **SAVE** and return to Page Composer clicking the button 
-<img src="/doc/images/setup/xxx_icon.png" width="20px"/>
+      <img src="/doc/images/setup/207_jahia.png" width="800px"/>
+4. Click **SAVE** and return to Page Composer
 
 Now you should see the website with its contribution area in Page Composer.
 
-![208]
+   <img src="/doc/images/setup/208_jahia.png" width="800px"/>
 
 In the **Sample sites** section of the site plan you can see sample pages and
 you can copy paste elements from **Industrial** or **About** sample pages into
 the Industrial home page.
+
 <img src="/doc/images/setup/209_jahia.png" width="300px"/>
 
 
