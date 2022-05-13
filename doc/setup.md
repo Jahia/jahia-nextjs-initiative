@@ -254,7 +254,7 @@ In the **Sample sites** section of the site plan you can see sample pages and
 you can copy paste elements from **Industrial** or **About** sample pages into
 the Industrial home page.
 
-<img src="/doc/images/setup/209_jahia.png" width="300px"/>
+<img src="/doc/images/setup/209_jahia.png" width="250px"/>
 
 
 ### Handle CORS issue
