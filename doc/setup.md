@@ -338,3 +338,9 @@ site node **Headless Industrial** you can do it from Repository Explorer.
 
 [initiative.md]: ../README.md
 [headless-industrial.yaml]: ../provisioning/headless-industrial.yaml
+
+<style>
+   img:{
+      border:1px solid red;
+   }
+</style>
