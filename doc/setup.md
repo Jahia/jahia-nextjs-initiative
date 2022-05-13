@@ -46,7 +46,7 @@ entry then click **CREATE**
    ![201]
 
 3. Copy paste your token, you will use it later as an environment variable forthe vercel app.
-   <img src="/doc/images/setup/202_token.png" width="375px"/>
+   <img src="./doc/images/setup/202_token.png" width="375px"/>
 
 
 The next step is to deploy modules and web project into jahia.
