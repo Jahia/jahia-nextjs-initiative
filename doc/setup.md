@@ -142,6 +142,7 @@ to signup to vercel.
 next-industrial project available on the Jahia github repository : 
 `https://github.com/Jahia/nextjs-industrial`
 <img src="/doc/images/setup/102_project_import.png" width="400px"/>
+--
 <img src="/doc/images/setup/103_import_project.png" width="400px"/>
 3. Select the git account in which you want to clone the project and the project name,
 then click **create**. Vercel will clone the repository to your account and start
@@ -149,6 +150,7 @@ to build it. It will take about 1mn for the repository to be created and the **b
 to fail. It is normal!** To have a successful build, you need to configure
 environment variables.
    <img src="/doc/images/setup/104_project_import.png" width="400px"/>
+--
    <img src="/doc/images/setup/105_project_import_failed.png" width="400px"/>
 
 
@@ -162,6 +164,7 @@ To work properly, the application needs to have some environment variables confi
 1. From your vercel dashboard click the **next-industrial** card, then click **Settings**
 then **Environment Variables**
    <img src="/doc/images/setup/106_project_post_config.png" width="800px"/>
+--
    <img src="/doc/images/setup/107_post_config.png" width="800px"/>
 
 2. From the Environment Variable screen you have to register four variables,
