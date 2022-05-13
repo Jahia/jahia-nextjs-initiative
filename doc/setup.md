@@ -39,11 +39,11 @@ on the backend side. To authenticate these calls you need to create a
 
 1. Log into your Jahia server with the root user and from your dashboard
 click **My API tokens** then **+ CREATE TOKEN**
-   <img src="/doc/images/setup/200_token.png" width="700px"/>
+   <img src="/doc/images/setup/200_token.png" width="800px"/>
 
 2. Fill the form, for the name use `headless` and for the Scope click the `graphql`
 entry then click **CREATE**
-   <img src="/doc/images/setup/201_token.png" width="700px"/>
+   <img src="/doc/images/setup/201_token.png" width="800px"/>
 
 3. Copy paste your token, you will use it later as an environment variable forthe vercel app.
    <img src="/doc/images/setup/202_token.png" width="450px"/>
@@ -113,11 +113,11 @@ not return any errors.
 If everything is done properly you should have a new web project available in your
 jahia server. From your Jahia dashboard you should see the **Headless Industrial** project.
 
-![203]
+<img src="/doc/images/setup/203_provision.png" width="800px"/>
 
 If you click on the project you should see the Site tree in page composer.
 
-![204]
+<img src="/doc/images/setup/204_provision.png" width="800px"/>
 
 As you can see in the image above the website needs a post install configuration.
 But before doing it, you will deploy the frontend part on [vercel.com][vercel-website]
@@ -137,32 +137,33 @@ to signup to vercel.
 
 ##### Next-industrial webapp deployment
 1. After logged into vercel, click **+ New Project** from your vercel dashboard
-![101]
+   <img src="/doc/images/setup/101_vercel_createProject.png" width="800px"/>
 2. Then click **Import Third-Party Git Repository** and copy paste the url of the
 next-industrial project available on the Jahia github repository : 
 `https://github.com/Jahia/nextjs-industrial`
-<img src="/doc/images/setup/102_project_import.png" width="300px"/>
-<img src="/doc/images/setup/103_project_import.png" width="300px"/>
+<img src="/doc/images/setup/102_project_import.png" width="400px"/>
+<img src="/doc/images/setup/103_import_project.png" width="400px"/>
 3. Select the git account in which you want to clone the project and the project name,
 then click **create**. Vercel will clone the repository to your account and start
 to build it. It will take about 1mn for the repository to be created and the **build
 to fail. It is normal!** To have a successful build, you need to configure
 environment variables.
-   <img src="/doc/images/setup/104_project_import.png" width="300px"/>
-   <img src="/doc/images/setup/105_project_import_failed.png" width="300px"/>
+   <img src="/doc/images/setup/104_project_import.png" width="400px"/>
+   <img src="/doc/images/setup/105_project_import_failed.png" width="400px"/>
 
 
 <u>Note</u> : the previous action has created a clone of the next-industrial project in your github. This clone will be used in another tutorial to update the rendering of the website.
 
-![1041]
+<img src="/doc/images/setup/1041_project_clone_github.png" width="800px"/>
 
 ##### Next-industrial webapp configuration
 To work properly, the application needs to have some environment variables configured.
 
 1. From your vercel dashboard click the **next-industrial** card, then click **Settings**
 then **Environment Variables**
-![106]
-![107]
+   <img src="/doc/images/setup/106_project_post_config.png" width="800px"/>
+   <img src="/doc/images/setup/107_post_config.png" width="800px"/>
+
 2. From the Environment Variable screen you have to register four variables,
 two variables are **public** (NEXT_PUBLIC), that means they are **exposed**
 in the browser and the two others are used only by the **back** and are 
@@ -184,8 +185,8 @@ in the browser and the two others are used only by the **back** and are
    to authenticate the server side graphQL request to Jahia. Add the token value
    you copy pasted previously.
 
-   ![108]
-![109]
+   <img src="/doc/images/setup/108_post_config.png" width="800px"/>
+<img src="/doc/images/setup/109_post_config.png" width="800px"/>
 
 ##### Rebuild next-js app
 Now your environment variables are configured you can redo a build.
@@ -306,6 +307,8 @@ site node **Headless Industrial** you can do it from Repository Explorer.
 
 [100]: ./images/setup/100_vercel.png
 [101]: ./images/setup/101_vercel_createProject.png
+[102]: ./images/setup/102_project_import.png
+[103]: ./images/setup/103_import_project.png
 [106]: ./images/setup/106_project_post_config.png
 [107]: ./images/setup/107_post_config.png
 [108]: ./images/setup/108_post_config.png
