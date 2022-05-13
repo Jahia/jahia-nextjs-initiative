@@ -43,7 +43,7 @@ click **My API tokens** then **+ CREATE TOKEN**
 
 2. Fill the form, for the name use `headless` and for the Scope click the `graphql`
 entry then click **CREATE**
-   ![201]
+   <img src="/doc/images/setup/201_token.png" width="700px"/>
 
 3. Copy paste your token, you will use it later as an environment variable forthe vercel app.
    <img src="/doc/images/setup/202_token.png" width="450px"/>
