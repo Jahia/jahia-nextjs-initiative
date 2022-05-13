@@ -52,7 +52,7 @@ Two modules are deployed in Jahia and one module is deployed in Vercel.
 - [jahia-industrial] : this module contains the content definitions to create components related to the industrial HTML template.
 - [nextjs-industrial] : this module contains the page templates and content views built in React used to render the website.
 
-We also provide an archive which contains a pre-built website with page samples.
+> We also provide an archive which contains a pre-built website with page samples.
 
 ## Set up the project
 [Read this dedicated page][setup.md]
