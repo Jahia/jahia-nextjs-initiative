@@ -39,7 +39,7 @@ on the backend side. To authenticate these calls you need to create a
 
 1. Log into your Jahia server with the root user and from your dashboard
 click **My API tokens** then **+ CREATE TOKEN**
-   ![200]
+   <img src="/doc/images/setup/200_token.png" width="700px"/>
 
 2. Fill the form, for the name use `headless` and for the Scope click the `graphql`
 entry then click **CREATE**
