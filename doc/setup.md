@@ -46,7 +46,7 @@ entry then click **CREATE**
    ![201]
 
 3. Copy paste your token, you will use it later as an environment variable forthe vercel app.
-   <img src="/doc/images/setup/202_token.png" width="375px"/>
+   <img src="/doc/images/setup/202_token.png" width="450px"/>
 
 
 The next step is to deploy modules and web project into jahia.
@@ -96,7 +96,7 @@ In addition to the yaml configuration file you have to configure the url and hea
 before the call.
 
 The following url and user values are given as an example,
-please update with your host and your root user password.
+please **update** with your **host** and your **root user password**.
 
 ```shell
 curl --request POST \
@@ -106,7 +106,7 @@ curl --request POST \
 --data '- include: https://raw.githubusercontent.com/Jahia/jahia-nextjs-initiative/main/provisioning/headless-industrial.yaml'
 ```
 
-Adjust the parameter and execute the curl request. This takes around 30s and should
+Adjust the parameters and execute the curl request. This takes around 30s and should
 not return any errors.
 
 ##### Provisioning check
@@ -133,7 +133,7 @@ on [vercel.com][vercel-website].
 You must have a Github account or one of the others below and use this account
 to signup to vercel.
 
-<img src="./doc/images/setup/100_vercel.png" width="375px"/>
+<img src="/doc/images/setup/100_vercel.png" width="375px"/>
 
 ##### Next-industrial webapp deployment
 1. After logged into vercel, click **+ New Project** from your vercel dashboard
@@ -141,15 +141,15 @@ to signup to vercel.
 2. Then click **Import Third-Party Git Repository** and copy paste the url of the
 next-industrial project available on the Jahia github repository : 
 `https://github.com/Jahia/nextjs-industrial`
-<img src="./doc/images/setup/102_project_import.png" width="300px"/>
-<img src="./doc/images/setup/103_project_import.png" width="300px"/>
+<img src="/doc/images/setup/102_project_import.png" width="300px"/>
+<img src="/doc/images/setup/103_project_import.png" width="300px"/>
 3. Select the git account in which you want to clone the project and the project name,
 then click **create**. Vercel will clone the repository to your account and start
 to build it. It will take about 1mn for the repository to be created and the **build
 to fail. It is normal!** To have a successful build, you need to configure
 environment variables.
-   <img src="./doc/images/setup/104_project_import.png" width="300px"/>
-   <img src="./doc/images/setup/105_project_import_failed.png" width="300px"/>
+   <img src="/doc/images/setup/104_project_import.png" width="300px"/>
+   <img src="/doc/images/setup/105_project_import_failed.png" width="300px"/>
 
 
 <u>Note</u> : the previous action has created a clone of the next-industrial project in your github. This clone will be used in another tutorial to update the rendering of the website.
@@ -241,7 +241,7 @@ switch button **HEADLESS SITE**
    `/api/jahia/templates`
    ![207]
 4. Click **SAVE** and return to Page Composer clicking the button 
-<img src="./doc/images/setup/xxx_icon.png" width="20px"/>
+<img src="/doc/images/setup/xxx_icon.png" width="20px"/>
 
 Now you should see the website with its contribution area in Page Composer.
 
@@ -250,7 +250,7 @@ Now you should see the website with its contribution area in Page Composer.
 In the **Sample sites** section of the site plan you can see sample pages and
 you can copy paste elements from **Industrial** or **About** sample pages into
 the Industrial home page.
-<img src="./doc/images/setup/209_jahia.png" width="300px"/>
+<img src="/doc/images/setup/209_jahia.png" width="300px"/>
 
 
 ### Handle CORS issue
