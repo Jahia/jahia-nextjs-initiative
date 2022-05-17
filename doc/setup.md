@@ -82,7 +82,7 @@ mvn install
 ```
 If everything is correct you should see a build success.
 
-<img src="/doc/images/setup/300_docker.png" width="500px"/>
+<img src="/doc/images/setup/300_docker.png" width="600px"/>
 
 The build add the `jahia/jahia-next-dev` image in your local docker instance, this image will be used
 later by docker-compose.
