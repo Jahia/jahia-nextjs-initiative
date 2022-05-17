@@ -15,4 +15,5 @@
   configIdentifier: "headless"
   properties:
     headless.auto_apply[1].origin: "http://vercel.my.local:3000"
-
+- enable: "jexperience"
+  site: "headless-industrial"

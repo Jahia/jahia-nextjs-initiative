@@ -1,0 +1,20 @@
+mutation {
+    jcr {
+        mutateNode(pathOrId: "/sites/headless-industrial") {
+            addMixins(mixins: ["jmix:headlessSite"])
+            setPropertiesBatch(
+                properties: [
+                    { name: "j:headlessHost", value: "http://vercel.my.local:3000" }
+                    {
+                        name: "j:headlessPreviewSecret"
+                        value: "57e22073-2485-43fe-b9a1-9205d5310561"
+                    }
+                    { name: "j:headlessPreviewURL", value: "/api/preview" }
+                    { name: "j:headlessTemplateListPath", value: "/api/jahia/templates" }
+                ]
+            ) {
+                path
+            }
+        }
+    }
+}
