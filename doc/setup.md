@@ -11,33 +11,32 @@ The website you will deploy is inspired by the Industrial template.
 
 ![003]
 
-[Modules involved](#modules-involved)
-[OnePremise Setup](#onepremise-setup)
-   [Docker](#docker)
-      [Build the jahia docker](#build-the-jahia-docker)
-      [Build the Node Nextjs docker](#build-the-node-nextjs-docker)
-      [Run docker images](#run-docker-images)
-         [Set up your hosts](#set-up-your-hosts)
-         [Configure nexus credential](#configure-nexus-credential)
-         [Start](#start)
-[Cloud Setup](#cloud-setup)
-   [Jahia](#jahia)
-      [Personal API Token](#personal-api-token)
-      [Jahia provisioning](#jahia-provisioning)
-         [Yaml configuration](#yaml-configuration)
-         [Call the provisioning API](#call-the-provisioning-api)
-         [Provisioning check](#provisioning-check)
-   [Vercel](#vercel)
-      [Vercel provisioning](#vercel-provisioning)
-         [Prerequisite](#prerequisite)
-         [Next-industrial webapp deployment](#next-industrial-webapp-deployment)
-         [Next-industrial webapp configuration](#next-industrial-webapp-configuration)
-         [Rebuild next-js app](#rebuild-next-js-app)
-   [Jahia Post-configuration](#jahia-post-configuration)
-      [Configure access to vercel site in Jahia](#configure-access-to-vercel-site-in-jahia)
-   [Handle CORS issue](#handle-cors-issue)
-      [Yaml configuration file](#yaml-configuration-file)
-      [Call the provisioning API](#call-the-provisioning-api)
+- [Modules involved](#modules-involved)
+- [OnePremise Setup with docker](#onepremise-setup-with-docker)
+  - [Build the jahia docker](#build-the-jahia-docker)
+  - [Build the Node Nextjs docker](#build-the-node-nextjs-docker)
+  - [Run docker images](#run-docker-images)
+    - [Set up your hosts](#set-up-your-hosts)
+    - [Configure nexus credential](#configure-nexus-credential)
+    - [Start](#start)
+- [Cloud Setup](#cloud-setup)
+  - [Jahia](#jahia)
+    - [Personal API Token](#personal-api-token)
+    - [Jahia provisioning](#jahia-provisioning)
+      - [Yaml configuration](#yaml-configuration)
+      - [Call the provisioning API](#call-the-provisioning-api)
+      - [Provisioning check](#provisioning-check)
+  - [Vercel](#vercel)
+    - [Vercel provisioning](#vercel-provisioning)
+      - [Prerequisite](#prerequisite)
+      - [Next-industrial webapp deployment](#next-industrial-webapp-deployment)
+      - [Next-industrial webapp configuration](#next-industrial-webapp-configuration)
+      - [Rebuild next-js app](#rebuild-next-js-app)
+  - [Jahia Post-configuration](#jahia-post-configuration)
+    - [Configure access to vercel site in Jahia](#configure-access-to-vercel-site-in-jahia)
+  - [Handle CORS issue](#handle-cors-issue)
+    - [Yaml configuration file](#yaml-configuration-file)
+    - [Call the provisioning API](#call-the-provisioning-api)
 
 ## Modules involved
 Three modules are required to contribute a website in Jahia and to render it in Vercel.
@@ -51,16 +50,15 @@ built in React used to render the website.
 
 > Note: we also provide an archive which contains a pre-built website with page samples.
 
-## OnePremise Setup
+## OnePremise Setup with docker
 The instructions below are written for a local docker installation. If you want to deploy
 the solution in the cloud go to [this section](#cloud-setup).
 We supposed that you already have a maven and docker environment up and running
 (docker, docker-compose...).
 
-### Docker
 We supposed that you already have a maven and docker environment configured
 (java, mvn, docker, docker-compose...).
-#### Build the jahia docker 
+### Build the jahia docker 
 Clone this module in your local file system
 ```shell
 git clone git@github.com:Jahia/jahia-nextjs-initiative.git
@@ -91,7 +89,7 @@ later by docker-compose.
 
 The jahia part is now finished, the next step is to build the node nextjs docker image.
 
-#### Build the Node Nextjs docker
+### Build the Node Nextjs docker
 At the same level as the **jahia-nextjs-initiative** clone the **nextjs-industrial** projet 
 in your local file system.
 ```shell
@@ -104,7 +102,7 @@ cd nextjs-industrial
 ./docker-build.sh
 ```
 
-#### Run docker images
+### Run docker images
 In the nextjs-industrial folder you find the file [docker-compose.yml] where all the docker images are listed :
 - jahia-next-dev which is your Jahia server containing the headless-industrial web project with jExperience
 - jCustomer which the backend of jExperience
@@ -118,7 +116,7 @@ As you can see in these files there are hosts used :
 - vercel.my.local
 these hosts have a full domain. Domain is important for jExperience.
 
-##### Set up your hosts
+#### Set up your hosts
 Add the host listed above in your hosts file. e.g. :
 ```shell
 vim /etc/hosts
@@ -130,7 +128,7 @@ add
 127.0.1.1	vercel.my.local
 ```
 
-##### Configure nexus credential
+#### Configure nexus credential
 jExperience and jCustomer are stored in protected repository so you have to provide credential
 to be able to upload them.
 Create a `.env.local` file 
@@ -143,7 +141,7 @@ NEXUS_USERNAME=<my@email.com>
 NEXUS_PASSWORD=<mySecretP@ssw0rd>
 ```
 
-##### Start
+#### Start
 Now everything is ready you can start docker :
 ```shell
 docker-compose up 

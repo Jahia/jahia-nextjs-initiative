@@ -11,6 +11,7 @@ Solutions we use are :
 - [Initiative overview](#initiative-overview)
 - [Why we decide this initiative](#why-we-decide-this-initiative)
 - [Modules involved](#modules-involved)
+- [Set up the project](#set-up-the-project)
 
 ## Initiative overview
 
