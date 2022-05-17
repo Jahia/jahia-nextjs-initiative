@@ -41,15 +41,27 @@ move to the jahia-nextjs-initiative/[docker-jahia] repository
 ```shell
 cd jahia-nextjs-initiative/docker-jahia
 ```
-and run the command:
+This repository contains :
+- a zip archive named **headless-industrial** which is a jahia web project use by
+content author to manage the headless web site and create new content.
+- yaml provisioning files used later to deploy modules and the web project in the fresh jahia docker instance.
+- a graphql file to post-configure in the web project the headless properties needs to connect
+the local node server deployed later.
+- a pom file used to build the jahia-next-dev docker image.
+
+To build the jahia-next-dev docker image run the command:
 ```shell
 mvn install
 ```
-If everything is correct you should see a build success
+If everything is correct you should see a build success.
 
 <img src="/doc/images/setup/300_docker.png" width="500px"/>
 
-The jahia part is now ready to use, you have to setup and start the Nextjs part.
+The build add the `jahia/jahia-next-dev` image in your local docker instance, this image will be used
+later by docker-compose.
+
+The jahia part is now finished, the next step is to setup and start the Nextjs part.
+
 ### Nextjs App
 At the same level as the jahia-nextjs-initiative clone the nextjs-industrial projet 
 in your local file system.

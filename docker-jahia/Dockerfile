@@ -10,7 +10,6 @@ ARG C_GROUP="tomcat"
 LABEL maintainer="Jahia Product team <product@jahia.com>"
 
 RUN mkdir -p /usr/local/tomcat/digital-factory-data/patches/provisioning
-COPY headless-industrial.zip /tmp
 COPY target/dependency/jahia-additional-modules-*-provisioning.yaml /usr/local/tomcat/digital-factory-data/patches/provisioning/3.1-jahia-additional-modules.yaml
 COPY 5.1-mf.yaml /usr/local/tomcat/digital-factory-data/patches/provisioning
 COPY 5.2-next.yaml /usr/local/tomcat/digital-factory-data/patches/provisioning
