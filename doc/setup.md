@@ -11,6 +11,34 @@ The website you will deploy is inspired by the Industrial template.
 
 ![003]
 
+[Modules involved](#modules-involved)
+[OnePremise Setup](#onepremise-setup)
+   [Docker](#docker)
+      [Build the jahia docker](#build-the-jahia-docker)
+      [Build the Node Nextjs docker](#build-the-node-nextjs-docker)
+      [Run docker images](#run-docker-images)
+         [Set up your hosts](#set-up-your-hosts)
+         [Configure nexus credential](#configure-nexus-credential)
+         [Start](#start)
+[Cloud Setup](#cloud-setup)
+   [Jahia](#jahia)
+      [Personal API Token](#personal-api-token)
+      [Jahia provisioning](#jahia-provisioning)
+         [Yaml configuration](#yaml-configuration)
+         [Call the provisioning API](#call-the-provisioning-api)
+         [Provisioning check](#provisioning-check)
+   [Vercel](#vercel)
+      [Vercel provisioning](#vercel-provisioning)
+         [Prerequisite](#prerequisite)
+         [Next-industrial webapp deployment](#next-industrial-webapp-deployment)
+         [Next-industrial webapp configuration](#next-industrial-webapp-configuration)
+         [Rebuild next-js app](#rebuild-next-js-app)
+   [Jahia Post-configuration](#jahia-post-configuration)
+      [Configure access to vercel site in Jahia](#configure-access-to-vercel-site-in-jahia)
+   [Handle CORS issue](#handle-cors-issue)
+      [Yaml configuration file](#yaml-configuration-file)
+      [Call the provisioning API](#call-the-provisioning-api)
+
 ## Modules involved
 Three modules are required to contribute a website in Jahia and to render it in Vercel.
 Two modules are deployed in Jahia and one module is deployed in Vercel.
@@ -29,7 +57,7 @@ the solution in the cloud go to [this section](#cloud-setup).
 We supposed that you already have a maven and docker environment up and running
 (docker, docker-compose...).
 
-### Jahia
+### Docker
 We supposed that you already have a maven and docker environment configured
 (java, mvn, docker, docker-compose...).
 #### Build the jahia docker 
@@ -44,7 +72,8 @@ cd jahia-nextjs-initiative/docker-jahia
 This repository contains :
 - a zip archive named **headless-industrial** which is a jahia web project use by
 content author to manage the headless web site and create new content.
-- yaml provisioning files used later to deploy modules and the web project in the fresh jahia docker instance.
+- yaml provisioning files used later to deploy modules (like [headless-templatesSet], 
+[jahia-industrial], [jExperience]...) and the web project in the fresh jahia docker instance.
 - a graphql file to post-configure in the web project the headless properties needs to connect
 the local node server deployed later.
 - a pom file used to build the jahia-next-dev docker image.
@@ -60,22 +89,70 @@ If everything is correct you should see a build success.
 The build add the `jahia/jahia-next-dev` image in your local docker instance, this image will be used
 later by docker-compose.
 
-The jahia part is now finished, the next step is to setup and start the Nextjs part.
+The jahia part is now finished, the next step is to build the node nextjs docker image.
 
-### Nextjs App
-At the same level as the jahia-nextjs-initiative clone the nextjs-industrial projet 
+#### Build the Node Nextjs docker
+At the same level as the **jahia-nextjs-initiative** clone the **nextjs-industrial** projet 
 in your local file system.
 ```shell
 git clone git@github.com:Jahia/nextjs-industrial.git
 ```
 Enter in the nextjs-industrial folder and run the doc build command
 
-### Nextjs App
-
 ```shell
 cd nextjs-industrial
 ./docker-build.sh
 ```
+
+#### Run docker images
+In the nextjs-industrial folder you find the file [docker-compose.yml] where all the docker images are listed :
+- jahia-next-dev which is your Jahia server containing the headless-industrial web project with jExperience
+- jCustomer which the backend of jExperience
+- elasticsearch used by jCustomer as a persistence layer
+- vercel which the local node engine running the nextjs-industrial app
+
+The variables used in this file are defined in the [.env] file.
+As you can see in these files there are hosts used :
+- jahia.my.local
+- jcustomer.my.local
+- vercel.my.local
+these hosts have a full domain. Domain is important for jExperience.
+
+##### Set up your hosts
+Add the host listed above in your hosts file. e.g. :
+```shell
+vim /etc/hosts
+```
+add
+```shell
+127.0.1.1	jahia.my.local
+127.0.1.1	jcustomer.my.local
+127.0.1.1	vercel.my.local
+```
+
+##### Configure nexus credential
+jExperience and jCustomer are stored in protected repository so you have to provide credential
+to be able to upload them.
+Create a `.env.local` file 
+```shell
+vim .env.local
+```
+Add this two variables with appropriate values :
+```shell
+NEXUS_USERNAME=<my@email.com>
+NEXUS_PASSWORD=<mySecretP@ssw0rd>
+```
+
+##### Start
+Now everything is ready you can start docker :
+```shell
+docker-compose up 
+```
+
+You should have Jahia and Next app up and running :
+try to access : 
+- http://jahia.my.local:8080/start
+- http://vercel.my.local:3000/sites/headless-industrial/home
 
 ## Cloud Setup
 The instructions below are written for an architecture using vercel and
@@ -389,8 +466,11 @@ site node **Headless Industrial** you can do it from Repository Explorer.
 [ask-demo-cloud]: https://www.jahia.com
 [jahia-token]: https://academy.jahia.com/home/documentation/developer/dx/8/working-with-our-apis/using-personal-api-tokens.html
 [jahia-provisioning]:https://academy.jahia.com/documentation/system-administrator/dev-ops/provisioning/about-provisioning
+[jExperience]: https://www.jahia.com/jexperience
 
 [initiative.md]: ../README.md
 [headless-industrial.yaml]: ../provisioning/headless-industrial.yaml
 
 [docker-jahia]: ../docker-jahia
+[docker-compose.yml]: https://github.com/Jahia/nextjs-industrial/blob/main/docker-compose.yml
+[.env]: https://github.com/Jahia/nextjs-industrial/blob/main/.env
