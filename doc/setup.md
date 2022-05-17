@@ -24,6 +24,46 @@ built in React used to render the website.
 > Note: we also provide an archive which contains a pre-built website with page samples.
 
 ## OnePremise Setup
+The instructions below are written for a local docker installation. If you want to deploy
+the solution in the cloud go to [this section](#cloud-setup).
+We supposed that you already have a maven and docker environment up and running
+(docker, docker-compose...).
+
+### Jahia
+We supposed that you already have a maven and docker environment configured
+(java, mvn, docker, docker-compose...).
+#### Build the jahia docker 
+Clone this module in your local file system
+```shell
+git clone git@github.com:Jahia/jahia-nextjs-initiative.git
+```
+move to the jahia-nextjs-initiative/[docker-jahia] repository
+```shell
+cd jahia-nextjs-initiative/docker-jahia
+```
+and run the command:
+```shell
+mvn install
+```
+If everything is correct you should see a build success
+
+<img src="/doc/images/setup/300_docker.png" width="500px"/>
+
+The jahia part is now ready to use, you have to setup and start the Nextjs part.
+### Nextjs App
+At the same level as the jahia-nextjs-initiative clone the nextjs-industrial projet 
+in your local file system.
+```shell
+git clone git@github.com:Jahia/nextjs-industrial.git
+```
+Enter in the nextjs-industrial folder and run the doc build command
+
+### Nextjs App
+
+```shell
+cd nextjs-industrial
+./docker-build.sh
+```
 
 ## Cloud Setup
 The instructions below are written for an architecture using vercel and
@@ -323,6 +363,8 @@ site node **Headless Industrial** you can do it from Repository Explorer.
 [114]: ./images/setup/114_vercel.png
 [115]: ./images/setup/115_vercel.png
 
+[300]: ./images/setup/300_docker.png
+
 [1041]: ./images/setup/1041_project_clone_github.png
 
 [xxx]: ./images/setup/xxx_icon.png
@@ -338,3 +380,5 @@ site node **Headless Industrial** you can do it from Repository Explorer.
 
 [initiative.md]: ../README.md
 [headless-industrial.yaml]: ../provisioning/headless-industrial.yaml
+
+[docker-jahia]: ../docker-jahia
