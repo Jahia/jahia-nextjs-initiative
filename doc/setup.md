@@ -119,7 +119,7 @@ these hosts have a full domain. Domain is important for jExperience.
 #### Set up your hosts
 Add the host listed above in your hosts file. e.g. :
 ```shell
-vim /etc/hosts
+sudo vim /etc/hosts
 ```
 add
 ```shell
