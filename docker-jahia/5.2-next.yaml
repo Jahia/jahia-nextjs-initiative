@@ -9,8 +9,8 @@
   - 'mvn:org.jahia.se.modules/headless-templatesSet'
   autoStart: true
   uninstallPreviousVersion: true
-- importSite: jar:file:///tmp/headless-industrial.zip!/headless-industrial.zip
-- import: jar:file:///tmp/headless-industrial.zip!/users.zip
+- importSite: jar:https://raw.githubusercontent.com/Jahia/jahia-nextjs-initiative/main/docker-jahia/headless-industrial.zip!/headless-industrial.zip
+- import: jar:https://raw.githubusercontent.com/Jahia/jahia-nextjs-initiative/main/docker-jahia/headless-industrial.zip!/users.zip
 - editConfiguration: "org.jahia.bundles.api.authorization"
   configIdentifier: "headless"
   properties:
