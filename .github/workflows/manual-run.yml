@@ -1,3 +1,5 @@
+name: Build Docker image
+
 on:
   workflow_dispatch:
 
@@ -12,10 +14,11 @@ jobs:
     env:
       NEXUS_USERNAME: ${{ secrets.NEXUS_USERNAME }}
       NEXUS_PASSWORD: ${{ secrets.NEXUS_PASSWORD }}
+      NEXUS_INTERNAL_URL: https://devtools.jahia.com/nexus/content/groups/internal/
     steps:
       - uses: actions/checkout@v2
       - name: Build Docker image
         run: |
           cd docker-jahia
-          mvn clean install
+          mvn -B -s .github/maven.settings.xml clean install
           docker push jahia/jahia-next:8.1.2.0-SNAPSHOT
