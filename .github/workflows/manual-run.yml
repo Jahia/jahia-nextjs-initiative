@@ -25,8 +25,17 @@ jobs:
       NEXUS_INTERNAL_URL: https://devtools.jahia.com/nexus/content/groups/internal/
     steps:
       - uses: actions/checkout@v2
+      - name: Docker login
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_PASSWORD }}
       - name: Build Docker image
         run: |
           cd docker-jahia
           mvn -B -s ../.github/maven.settings.xml clean install
-          docker push jahia/jahia-next:8.1.2.0-SNAPSHOT
+      - name: Display available images on the runner
+        run: docker image ls
+      - name: Push Docker image
+        run: |
+          docker push jahia/jahia-ee-next:8.1.2.0-SNAPSHOT
