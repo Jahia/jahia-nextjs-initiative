@@ -1,0 +1,20 @@
+on:
+  workflow_dispatch:
+
+jobs:
+  print-tag:
+    runs-on: ubuntu-latest
+    container:
+      image: jahia/cimg-mvn-cache:ga_cimg_openjdk_8.0.312-node
+      credentials:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_PASSWORD }}
+    env:
+      NEXUS_USERNAME: ${{ secrets.NEXUS_USERNAME }}
+      NEXUS_PASSWORD: ${{ secrets.NEXUS_PASSWORD }}
+    steps:
+      - name: Build Docker image
+        run: |
+          cd docker-jahia
+          mvn clean install
+          docker push jahia/jahia-next:8.1.2.0-SNAPSHOT
