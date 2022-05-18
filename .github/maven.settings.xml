@@ -37,6 +37,18 @@
                         <enabled>true</enabled>
                     </snapshots>
                 </repository>
+                <repository>
+                    <id>jahia-enterprise</id>
+                    <name>Jahia Enterprise Repository</name>
+                    <url>https://devtools.jahia.com/nexus/content/groups/enterprise</url>
+                    <releases>
+                        <enabled>true</enabled>
+                        <updatePolicy>never</updatePolicy>
+                    </releases>
+                    <snapshots>
+                        <enabled>true</enabled>
+                    </snapshots>
+                </repository>
             </repositories>
         </profile>
     </profiles>
@@ -46,6 +58,11 @@
     </activeProfiles>
 
     <servers>
+        <server>
+            <id>jahia-enterprise</id>
+            <username>${env.NEXUS_USERNAME}</username>
+            <password>${env.NEXUS_PASSWORD}</password>
+        </server>    
         <server>
             <id>jahia-enterprise-releases</id>
             <username>${env.NEXUS_USERNAME}</username>
