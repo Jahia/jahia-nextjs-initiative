@@ -149,7 +149,7 @@ docker-compose up
 
 You should have Jahia and Next app up and running :
 try to access : 
-- http://jahia.my.local:8080/start
+- http://jahia.my.local:8080/start (*root/root1234*)
 - http://vercel.my.local:3000/sites/headless-industrial/home
 
 ## Cloud Setup
