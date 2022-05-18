@@ -13,6 +13,8 @@
     <properties>
         <image.repo>jahia-next</image.repo>
         <dockerfile.build.pullNewerImage>false</dockerfile.build.pullNewerImage>
+        <image.repo.classifier></image.repo.classifier>
+        <parent.tag>latest</parent.tag>
     </properties>
 
     <repositories>
