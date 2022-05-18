@@ -84,7 +84,7 @@ If everything is correct you should see a build success.
 
 <img src="/doc/images/setup/300_docker.png" width="600px"/>
 
-The build add the `jahia/jahia-next-dev` image in your local docker instance, this image will be used
+The build add the `jahia/jahia-next` image in your local docker instance, this image will be used
 later by docker-compose.
 
 The jahia part is now finished, the next step is to build the node nextjs docker image.
