@@ -28,5 +28,5 @@ jobs:
       - name: Build Docker image
         run: |
           cd docker-jahia
-          mvn -B -s .github/maven.settings.xml clean install
+          mvn -B -s ../.github/maven.settings.xml clean install
           docker push jahia/jahia-next:8.1.2.0-SNAPSHOT
