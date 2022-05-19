@@ -15,7 +15,7 @@ Solutions we use are :
 
 ## Initiative overview
 
-To be the best, Jahia must take care of both side of a project, the development and the content contribution.
+To be the best, Jahia takes care of both side of a project, the development and the content contribution.
 One of the key factor success of a web project is the facility for each side to execute their task. 
 
 |Developers|Web Contributors|
