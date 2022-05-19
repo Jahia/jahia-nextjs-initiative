@@ -4,8 +4,9 @@ To know more about the Jahia Nextjs initiative [read this dedicated page][initia
 
 - [Building process](#building-process)
 - [Edit or Preview content](#edit-or-preview-content)
-    - [First load](#first-load)
-    - [Standard load](#standard-load)
+  - [Overview](#overview)
+  - [First load](#first-load)
+  - [Standard load](#standard-load)
 - [Live rendering](#live-rendering)
 
 ## Building process
@@ -36,25 +37,6 @@ and use later at the component level to render it.
 ![build]
 ## Edit or Preview content
 ### Overview
-With headless CMS editing and previewing HTML page is not trivial for developers and
-contributors :
-- from developer point of view you have to add a specific button to your app, to enable
-or disable the preview.
-- from contributor point of view, you cannot edit the content in the HTML page, sometime worth
-the notion of page doesn't exist and the preview mechanism is not easy.
-
-Even if Jahia can be used as an headless CMS it is in the CMS market for a wild and
-as a long experience in content management, it is especially recognized to provide a
-good contributor experience.
-From its experience Jahia can offer the best of tow worlds, offert to the contributor 
-the same experience to contribute and preview an headless website as it was in a traditional
-website rendered directly by the CMS.
-
-|Traditional Edit Experience|Headless Edit Experience|
-|---|---|
-|![traditionalExperience]|![headlessExperience]|
-
-To obtain this result we have properly integrated next-js flow in Jahia.
 
 ### First load
 ![editpreviewfirst]
@@ -67,7 +49,7 @@ To obtain this result we have properly integrated next-js flow in Jahia.
 [editpreviewfirst]: ./images/architecture/editpreviewfirst.png
 [editpreviewsecond]: ./images/architecture/editpreviewsecond.png
 [live]: ./images/architecture/live_flow.png
-[traditionalExperience]: ./images/architecture/traditionalExperience.png
-[headlessExperience]: ./images/architecture/headlessExperience.png
+
 
 [apollo-ssr]:https://www.apollographql.com/docs/react/api/react/ssr/#rendertostringwithdata
+[initiative.md]: ../README.md

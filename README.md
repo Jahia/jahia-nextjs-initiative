@@ -9,6 +9,7 @@ Solutions we use are :
 ### Table of Contents :
 
 - [Initiative overview](#initiative-overview)
+  - [Headless challenges : Edit and Preview](#headless-challenges--edit-and-preview)
 - [Why we decide this initiative](#why-we-decide-this-initiative)
 - [Modules involved](#modules-involved)
 - [Set up the project](#set-up-the-project)
@@ -22,6 +23,28 @@ One of the key factor success of a web project is the facility for each side to 
 |---|---|
 |A web project is easy to create and maintain when they have an SDK in their preferred languages, and they can create, update, test and deploy component quickly.| A web project is easy to contribute and maintain when they understand the web site page structure and when they can create a content by clicking a button or just copy past a WYSIWYG content in the web page.|
 | ![000] | ![001] |
+
+### Headless challenges : Edit and Preview 
+
+With headless CMS editing and previewing HTML page is not trivial for developers and
+contributors :
+- from developer point of view you have to add a specific button to your app, to enable
+  or disable the preview.
+- from contributor point of view, you cannot edit the content in the HTML page, sometime worth
+  the notion of page doesn't exist and the preview mechanism is not easy.
+
+Even if Jahia can be used as an headless CMS it is in the CMS market for a wild and
+as a long experience in content management, it is especially recognized to provide a
+good contributor experience.
+From its experience Jahia can offer the best of tow worlds, offert to the contributor
+the same experience to contribute and preview an headless website as it was in a traditional
+website rendered directly by the CMS.
+
+|Traditional Edit Experience|Headless Edit Experience|
+|---|---|
+|![traditionalExperience]|![headlessExperience]|
+
+To obtain this result we have properly integrated next-js flow in Jahia.
 
 ## Why we decide this initiative
 
@@ -58,11 +81,16 @@ Two modules are deployed in Jahia and one module is deployed in Vercel.
 ## Set up the project
 [Read this dedicated page][setup.md]
 
+## Architecture
+[Read this dedicated page][architecture.md]
+
 
 
 [000]: doc/images/000_DevPageTemplate.png
 [001]: doc/images/001_ContribPageTempalte.png
 [003]: doc/images/003_website.png
+[traditionalExperience]: doc/images/005_traditionalExperience.png
+[headlessExperience]: doc/images/004_headlessExperience.png
 
 [owl]: https://owlcarousel2.github.io/OwlCarousel2
 [store-industrial]: https://store.jahia.com/contents/modules-repository/org/jahia/se/modules/industrial.html
@@ -74,4 +102,5 @@ Two modules are deployed in Jahia and one module is deployed in Vercel.
 [nextjs-industrial]: https://github.com/Jahia/nextjs-industrial
 
 [setup.md]: doc/setup.md
+[architecture.md]: doc/architecture.md
 
