@@ -16,8 +16,10 @@ Solutions we use are :
 
 ## Initiative overview
 
-To be the best, Jahia takes care of both side of a project, the development and the content contribution.
-One of the key factor success of a web project is the facility for each side to execute their task. 
+To be the best, Jahia takes care of both side of a project, the development and the
+content contribution.
+One of the key factor success of a web project is the facility for each side to
+execute their task. 
 
 |Developers|Web Contributors|
 |---|---|
@@ -26,18 +28,18 @@ One of the key factor success of a web project is the facility for each side to 
 
 ### Headless challenges : Edit and Preview 
 
-With headless CMS editing and previewing HTML page is not trivial for developers and
+With headless CMS, editing and previewing HTML page is not trivial for developers and
 contributors :
-- from developer point of view you have to add a specific button to your app, to enable
+- from developer point of view, you have to add a specific button to your app, to enable
   or disable the preview.
-- from contributor point of view, you cannot edit the content in the HTML page, sometime worth
-  the notion of page doesn't exist and the preview mechanism is not easy.
+- from contributor point of view, you cannot edit the content in the HTML page, sometime
+worth the notion of page doesn't exist and the preview mechanism is not easy.
 
-Even if Jahia can be used as an headless CMS it is in the CMS market for a wild and
-as a long experience in content management, it is especially recognized to provide a
+Even if Jahia can be used as an headless CMS, it is in the CMS market for a wild and
+has a long experience in content management. Thus, it is especially recognized to provide a
 good contributor experience.
-From its experience Jahia can offer the best of tow worlds, offert to the contributor
-the same experience to contribute and preview an headless website as it was in a traditional
+Based in its experience, Jahia can offer the best of two worlds, offer to the contributor
+the same experience to contribute and preview an headless website as it was for a traditional
 website rendered directly by the CMS.
 
 |Traditional Edit Experience|Headless Edit Experience|
