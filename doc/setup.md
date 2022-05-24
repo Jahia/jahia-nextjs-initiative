@@ -53,10 +53,8 @@ built in React used to render the website.
 ## OnePremise Setup with docker
 The instructions below are written for a local docker installation. If you want to deploy
 the solution in the cloud go to [this section](#cloud-setup).
-We supposed that you already have a maven and docker environment up and running
-(docker, docker-compose...).
 
-We supposed that you already have a maven and docker environment configured
+We supposed that you already have a maven and docker environment configured and running
 (java, mvn, docker, docker-compose...).
 ### Build the jahia docker 
 Clone this module in your local file system
