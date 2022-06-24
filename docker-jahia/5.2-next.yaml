@@ -6,6 +6,7 @@
   - 'mvn:org.jahia.se.modules/codemirror-editor/1.1.3'
   - 'mvn:org.jahia.se.modules/jahia-industrial'
   - 'mvn:org.jahia.se.modules/industrial-media-component/1.0.0'
+  - 'mvn:org.jahia.se.modules/nextjs-proxy'
   - 'mvn:org.jahia.se.modules/headless-templatesSet'
   autoStart: true
   uninstallPreviousVersion: true

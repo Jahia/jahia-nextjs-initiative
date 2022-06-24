@@ -14,7 +14,7 @@
         <image.repo>jahia-ee-next</image.repo>
         <dockerfile.build.pullNewerImage>false</dockerfile.build.pullNewerImage>
         <image.repo.classifier></image.repo.classifier>
-        <parent.tag>latest</parent.tag>
+        <parent.tag>8.1.2.0</parent.tag>
     </properties>
 
     <repositories>
