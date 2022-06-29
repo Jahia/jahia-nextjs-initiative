@@ -71,13 +71,14 @@ the same capabilities to contribute, personalize and deliver a website regardles
 Three modules are required to contribute a web project in Jahia and to render it in Vercel.
 Two modules are deployed in Jahia and one module is deployed in Vercel.
 
-- [headless-templatesSet] : a Jahia Templates Set for headless projects. This module provides :
+- [headless-templatesSet]: a Jahia Templates Set for headless projects.
+This template set must be used with a proxy to enable headless features.
+- [nextjs-proxy]: a jahia modules used to manage Nextjs website in Jahia. This module provides :
   - an HTTP proxy to redirect edit and preview rendering
   - a mixin to configure paths and token to interact with your Vercel next-js app
   - a mixin and its contentList Initializer to list and select an headless template for your pages 
-  - a graphQL extension provider to create content areas (temporarily in this module)
-- [jahia-industrial] : this module contains the content definitions to create components related to the industrial HTML template.
-- [nextjs-industrial] : this module contains the page templates and content views built in React used to render the website.
+- [jahia-industrial]: this module contains the content definitions to create components related to the industrial HTML template.
+- [nextjs-industrial]: this module contains the page templates and content views built in React used to render the website.
 
 > We also provide an archive which contains a pre-built website with page samples.
 
@@ -101,6 +102,7 @@ Two modules are deployed in Jahia and one module is deployed in Vercel.
 [vercel-website]: https://vercel.com
 
 [headless-templatesSet]: https://github.com/Jahia/headless-templatesSet
+[nextjs-proxy]: https://github.com/Jahia/nextjs-proxy
 [jahia-industrial]: https://github.com/Jahia/jahia-industrial
 [nextjs-industrial]: https://github.com/Jahia/nextjs-industrial
 
