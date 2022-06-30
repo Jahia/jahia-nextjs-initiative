@@ -73,7 +73,7 @@ Two modules are deployed in Jahia and one module is deployed in Vercel.
 
 - [headless-templatesSet]: a Jahia Templates Set for headless projects.
 This template set must be used with a proxy to enable headless features.
-- [nextjs-proxy]: a jahia modules used to manage Nextjs website in Jahia. This module provides :
+- [nextjs-proxy]: a Jahia modules used to manage Nextjs website in Jahia. This module provides :
   - an HTTP proxy to redirect edit and preview rendering
   - a mixin to configure paths and token to interact with your Vercel next-js app
   - a mixin and its contentList Initializer to list and select an headless template for your pages 

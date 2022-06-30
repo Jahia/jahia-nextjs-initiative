@@ -20,6 +20,7 @@ The website you will deploy is inspired by the Industrial template.
     - [Configure nexus credential](#configure-nexus-credential)
     - [Start](#start)
 - [Cloud Setup](#cloud-setup)
+  - [Overview](#deployment-overview)
   - [Jahia](#jahia)
     - [Personal API Token](#personal-api-token)
     - [Jahia provisioning](#jahia-provisioning)
@@ -35,7 +36,7 @@ The website you will deploy is inspired by the Industrial template.
   - [Jahia Post-configuration](#jahia-post-configuration)
     - [Configure access to vercel site in Jahia](#configure-access-to-vercel-site-in-jahia)
   - [Handle CORS issue](#handle-cors-issue)
-    - [Yaml configuration file](#yaml-configuration-file)
+    - [Json configuration script](#json-configuration-script)
     - [Call the provisioning API](#call-the-provisioning-api)
 
 ## Modules involved
@@ -43,6 +44,7 @@ Three modules are required to contribute a website in Jahia and to render it in 
 Two modules are deployed in Jahia and one module is deployed in Vercel.
 
 - [headless-templatesSet] : a Jahia Templates Set for headless projects.
+- [nextjs-proxy]: a Jahia modules used to manage Nextjs website in Jahia
 - [jahia-industrial] : this module contains the content definitions to create
 components related to the industrial HTML template.
 - [nextjs-industrial] : this module contains the page templates and content views
@@ -61,15 +63,16 @@ Clone this module in your local file system
 ```shell
 git clone git@github.com:Jahia/jahia-nextjs-initiative.git
 ```
-move to the jahia-nextjs-initiative/[docker-jahia] repository
+go to the jahia-nextjs-initiative/[docker-jahia] repository
 ```shell
 cd jahia-nextjs-initiative/docker-jahia
 ```
 This repository contains :
 - a zip archive named **headless-industrial** which is a jahia web project use by
 content author to manage the headless web site and create new content.
-- yaml provisioning files used later to deploy modules (like [headless-templatesSet], 
-[jahia-industrial], [jExperience]...) and the web project in the fresh jahia docker instance.
+- yaml provisioning files used later to deploy modules (like [headless-templatesSet],
+  [nextjs-proxy], [jahia-industrial], [jExperience]...) and the web project in the fresh
+jahia docker instance.
 - a graphql file to post-configure in the web project the headless properties needs to connect
 the local node server deployed later.
 - a pom file used to build the jahia-next-dev docker image.
@@ -155,6 +158,18 @@ The instructions below are written for an architecture using vercel and
 an instance of Jahia accessible by vercel. Let's assume you have a jahia cloud
 environnement up and runing ([ask for a demo cloud environnement][ask-demo-cloud])
 
+### Deployment overview
+this section resume the five actions to do, to set up the Nextjs initiative project in the cloud:
+- Jahia
+  - Create a personal api token used by next.js app to call jahia api from back to back [>> read more](#personal-api-token)
+  - With a curl call to the Jahia provisioning API, deploy modules and import webproject [>> read more](#jahia-provisioning)
+  - Register the new vercel/next.js instance and the preview secret [>> read more](#jahia-post-configuration)
+- Vercel
+  - Clone and deploy next-js github project from  Jahia repo [>> read more](#next-industrial-webapp-deployment)
+  - Register the Jahia instance via environment variables [>> read more](#next-industrial-webapp-configuration)
+
+
+
 ### Jahia  
 
 #### Personal API Token
@@ -191,7 +206,6 @@ For this tutorial you use a yaml file and you send it with curl.
 To install all the required components into jahia you use the following configuration :
 ```yml
 - addMavenRepository: "https://store.jahia.com/nexus/content/repositories/jahia-public-app-store@id=JahiaStore"
-- addMavenRepository: "https://devtools.jahia.com/nexus/content/groups/internal@id=jahia-internal@snapshots"
 
 # New next.js and industrial modules
 - installBundle:
@@ -201,6 +215,7 @@ To install all the required components into jahia you use the following configur
     - "mvn:org.jahia.se.modules/codemirror-editor/1.1.3"
     - "mvn:org.jahia.se.modules/jahia-industrial"
     - "mvn:org.jahia.se.modules/industrial-media-component/1.0.0"
+    - "mvn:org.jahia.modules/nextjs-proxy"
     - "mvn:org.jahia.se.modules/headless-templatesSet"
       autoStart: true
       uninstallPreviousVersion: true
@@ -394,30 +409,31 @@ So to prevent CORS issues, you have to allow the vercel domain in the api author
 file deployed by the [headless-templatesSet] module.
 
 To update the configuration file, you will again use the provisioning API.
-Don’t forget to use your own vercel domain. As a reminder the one display
+Don’t forget to use your **own vercel domain**. As a reminder the one display
 below is relative to the specific instance deployed as an example in the tutorial.
 
-#### Yaml configuration file
-```yaml
-- editConfiguration: "org.jahia.bundles.api.authorization"
-  configIdentifier: "headless"
-  properties:
-  headless.auto_apply[1].origin: "https://nextjs-industrial-hduchesn.vercel.app"
+#### Json configuration script
+```json
+[
+  {
+    "editConfiguration":"org.jahia.bundles.api.authorization",
+    "configIdentifier":"headless",
+    "properties":{
+      "headless.auto_apply[1].origin":"https://nextjs-industrial-hduchesn.vercel.app"
+    }
+  }
+]
 ```
 #### Call the provisioning API
 ```shell
-curl --request POST \
---url https://headless-jahiapm.internal.cloud.jahia.com/modules/api/provisioning \
+curl -X POST \
+--url https://tech-day-jahiasales.internal.cloud.jahia.com/modules/api/provisioning \
 -u root:root123 \
---header 'Content-Type: application/yaml' \
---data '- editConfiguration: "org.jahia.bundles.api.authorization"
-configIdentifier: "headless"
-properties:
-headless.auto_apply[1].origin: "https://nextjs-industrial-hduchesn.vercel.app"'
+--form script='[{"editConfiguration":"org.jahia.bundles.api.authorization","configIdentifier":"headless","properties":{"headless.auto_apply[1].origin":"https://nextjs-industrial-hduchesn.vercel.app"}}]'
 ```
 Et voilà !
 
->Tip: if you have any issue with Page composer and you want to edit the system
+>Tip: if you have any issue with Page composer, and you want to edit the system
 site node **Headless Industrial** you can do it from Repository Explorer.
 
 [003]: ./images/003_website.png
@@ -455,6 +471,7 @@ site node **Headless Industrial** you can do it from Repository Explorer.
 [xxx]: ./images/setup/xxx_icon.png
 
 [headless-templatesSet]: https://github.com/Jahia/headless-templatesSet
+[nextjs-proxy]: https://github.com/Jahia/nextjs-proxy
 [jahia-industrial]: https://github.com/Jahia/jahia-industrial
 [nextjs-industrial]: https://github.com/Jahia/nextjs-industrial
 [jahia-website]: https://www.jahia.com
