@@ -8,7 +8,7 @@
     - "mvn:org.jahia.se.modules/jahia-industrial"
     - "mvn:org.jahia.se.modules/industrial-media-component/1.0.0"
     - "mvn:org.jahia.modules/nextjs-proxy"
-    - "mvn:org.jahia.se.modules/headless-templatesSet"
+    - "mvn:org.jahia.modules/headless-templatesSet"
   autoStart: true
   uninstallPreviousVersion: true
 - importSite: jar:https://raw.githubusercontent.com/Jahia/jahia-nextjs-initiative/main/docker-jahia/headless-industrial.zip!/headless-industrial.zip
