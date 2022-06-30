@@ -380,6 +380,7 @@ switch button **HEADLESS SITE**
    In our case : *https://nextjs-industrial-hduchesn.vercel.app*
    2. The preview token (it is the same value as the one configure in the vercel
    env variable), use:`57e22073-2485-43fe-b9a1-9205d5310561`
+   
    >Note: we assume you use the path `/api/preview` to handle preview rendering
 
       <img src="/doc/images/setup/207_jahia.png" width="800px"/>
