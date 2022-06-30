@@ -375,15 +375,15 @@ the same way we set environment variables in vercel.
 2. The edit form appears, scroll down to the end of the form and turn on the
 switch button **HEADLESS SITE**
    <img src="/doc/images/setup/206_jahia.png" width="800px"/>
-3. You have to fill four parameters :
+3. You have to fill two parameters :
    1. The headless frontend server url, this is the stable domain of your vercel app.
    In our case : *https://nextjs-industrial-hduchesn.vercel.app*
-   2. The path for the preview API, use: `/api/preview`
-   3. The preview token (it is the same value as the one configure in the vercel
+   2. The preview token (it is the same value as the one configure in the vercel
    env variable), use:`57e22073-2485-43fe-b9a1-9205d5310561`
-   4. The path to list the Page template available in the nextjs app, use:
-   `/api/jahia/templates`
+   >Note: we assume you use the path `/api/preview` to handle preview rendering
+
       <img src="/doc/images/setup/207_jahia.png" width="800px"/>
+   
 4. Click **SAVE** and return to Page Composer
 
 Now you should see the website with its contribution area in Page Composer.
