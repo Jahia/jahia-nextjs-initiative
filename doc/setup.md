@@ -426,7 +426,7 @@ below is relative to the specific instance deployed as an example in the tutoria
 ```shell
 curl -X POST \
 --url https://headless-jahiapm.internal.cloud.jahia.com/modules/api/provisioning \
---header 'Authorization: Basic cm9vdDp9Oz4iKTU0V3JqITg7PXdKWEo=' \
+-u root:root123 \
 --form script='[{"editConfiguration":"org.jahia.bundles.api.authorization","configIdentifier":"nextjsproxy","properties":{"nextjs.auto_apply[1].origin":"https://nextjs-industrial-hduchesn.vercel.app"}}]'
 ```
 Et voilà !
