@@ -415,9 +415,9 @@ below is relative to the specific instance deployed as an example in the tutoria
 [
   {
     "editConfiguration":"org.jahia.bundles.api.authorization",
-    "configIdentifier":"headless",
+    "configIdentifier":"nextjsproxy",
     "properties":{
-      "headless.auto_apply[1].origin":"https://nextjs-industrial-hduchesn.vercel.app"
+      "nextjs.auto_apply[1].origin":"https://nextjs-industrial-hduchesn.vercel.app"
     }
   }
 ]
@@ -425,9 +425,9 @@ below is relative to the specific instance deployed as an example in the tutoria
 #### Call the provisioning API
 ```shell
 curl -X POST \
---url https://tech-day-jahiasales.internal.cloud.jahia.com/modules/api/provisioning \
--u root:root123 \
---form script='[{"editConfiguration":"org.jahia.bundles.api.authorization","configIdentifier":"headless","properties":{"headless.auto_apply[1].origin":"https://nextjs-industrial-hduchesn.vercel.app"}}]'
+--url https://headless-jahiapm.internal.cloud.jahia.com/modules/api/provisioning \
+--header 'Authorization: Basic cm9vdDp9Oz4iKTU0V3JqITg7PXdKWEo=' \
+--form script='[{"editConfiguration":"org.jahia.bundles.api.authorization","configIdentifier":"nextjsproxy","properties":{"nextjs.auto_apply[1].origin":"https://nextjs-industrial-hduchesn.vercel.app"}}]'
 ```
 Et voilà !
 
