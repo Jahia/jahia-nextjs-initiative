@@ -1,5 +1,6 @@
 - addMavenRepository: "https://store.jahia.com/nexus/content/repositories/jahia-public-app-store@id=JahiaStore"
 - installBundle:
+  - "mvn:org.jahia.modules/animate"
   - 'mvn:org.jahia.modules/popperjs'
   - 'mvn:org.jahia.modules/bootstrap4-core'
   - 'mvn:org.jahia.modules/bootstrap4-components'
